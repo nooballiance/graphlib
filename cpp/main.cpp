@@ -24,7 +24,8 @@ int main()
 
 			Graph g(n);			
 			
-			while(e--)
+			int e1=e;
+			while(e1--)
 			{	
 				int u,v;
 				cin>>u>>v;
@@ -49,12 +50,13 @@ int main()
 			g.printGraph();
 			cout<<"\n(strongly connected components)\n";
 			g.SCC();
-/*			cout<<"\n(pathfinding)\n";
-		    cout<<"Enter source vertex : ";
-		    int src;
-		    cin>>src;
-		    g.BFS(n,src);
-*/		}
+			cout<<"\n(euler)\n";
+			g.Euler(n,e);			
+			cout<<"\n(hamilton)\n";
+			g.Hamilton(n,e);		
+			cout<<"\n(topological sort)\n";
+			g.topologicalSort();		
+		}
 		
 		if(op2==3 || op2==4)
 		{
@@ -66,7 +68,8 @@ int main()
 			cout<<"edges and weight: \n";
 
 			WGraph g(n);
-			while(e--)
+			int e1=e;
+			while(e1--)
 			{	
 				int u,v,w;
 				cin>>u>>v>>w;
@@ -89,6 +92,12 @@ int main()
 
 			cout<<"\n(printgraph)\n";
 			g.printGraph();
+			cout<<"\n(Dijkstra)\n";
+		    cout<<"Enter source vertex : ";
+		    int src;
+		    cin>>src;
+		    cout<<endl;
+			g.Dijkstra(src-1);
 		}		
 	}
 	

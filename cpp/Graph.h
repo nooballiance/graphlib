@@ -25,9 +25,22 @@ public:
   
   void SCC();
   Graph getTranspose();  
+  
+  void Euler(int n, int e);
+  
+  void Hamilton(int n, int e);
+  bool check_graph(int v);
+  void dfs(int v);
+  void topsort();
+  int nodeCount, cycle_start = -1;  
+  vector<vector<int>> gr;
+  vector<bool> used;
+  vector<int> beat;  
+  vector<int> color;
 
-  void BFS(int n,int src);
-  void find_path(int start,int end,int par[]);  
+  void topologicalSortUtil(int v, bool visited[], stack<int> &Stack);
+  void topologicalSort();
+  
 };
 
 class WGraph
@@ -44,6 +57,8 @@ public:
   void addEdgeD(int u, int v, int w);
 
   void printGraph();
+  
+  void Dijkstra(int s);
 
 };
 #endif
